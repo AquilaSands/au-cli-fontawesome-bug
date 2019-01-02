@@ -1,7 +1,11 @@
-import {Aurelia} from 'aurelia-framework'
+import {Aurelia} from 'aurelia-framework';
 import environment from './environment';
+import { FontAwesome } from './font-awesome';
 
 export function configure(aurelia: Aurelia) {
+  const fontAwesome: FontAwesome = aurelia.container.get(FontAwesome);
+  fontAwesome.loadIcons();
+
   aurelia.use
     .standardConfiguration()
     .feature('resources');
